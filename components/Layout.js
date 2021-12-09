@@ -56,7 +56,7 @@ export default function Layout({ children, page }) {
                   : styles.link
               }
             >
-              random-recipe
+              Random Recipe
             </a>
           </Link>
         </nav>
