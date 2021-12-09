@@ -157,7 +157,6 @@ export const getServerSideProps = async ({ query }) => {
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${query.recipe}`
   );
   const result = await res.json();
-  console.log("result", result);
   return {
     props: { recipe: result.meals[0] },
   };

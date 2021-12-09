@@ -9,8 +9,6 @@ import imageLoader from "../../imageLoader";
 function Categories({ category }) {
   const router = useRouter();
 
-  console.log(category);
-  console.log(router.query.category);
   return (
     <Layout page={"Category" + router.query.category}>
       <Head>
@@ -51,7 +49,6 @@ function Categories({ category }) {
 }
 
 export const getServerSideProps = async ({ query }) => {
-  console.log("query: ", query);
   const res = await fetch(
     `https://www.themealdb.com/api/json/v1/1/filter.php?c=${query.category}`
   );

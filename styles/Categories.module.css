@@ -11,10 +11,11 @@
   align-items: center;
   height: 10vh;
   letter-spacing: 0.5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(240, 188, 137, 0.5);
   width: 100%;
-  color: #f0bc89;
+  color: #000;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 .headerTitle {
   margin: 0;
@@ -35,9 +36,10 @@
   width: calc(25% - 20px);
   padding: 10px;
   margin: 10px;
-  min-height: 200px;
+  min-height: 180px;
   border-radius: 5px;
-  background-color: rgba(253, 153, 53, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 .categoryCardImage {
   border-radius: 5px;
