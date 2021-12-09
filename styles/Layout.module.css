@@ -1,0 +1,59 @@
+.header {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.HeaderContent {
+  display: flex;
+  align-items: center;
+}
+.titleHeader {
+  margin: 0 0 5px 0;
+}
+.logoHeader {
+  margin: 0 10px;
+}
+.nav {
+  padding: 20px;
+}
+.link {
+  margin: 10px;
+  transition: 0.3s ease;
+}
+.link:hover {
+  color: #f0bc89;
+}
+.active {
+  margin: 10px;
+  color: #f0bc89;
+}
+
+.mainContent {
+  min-height: 90vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background: url("/bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.span {
+  color: #f0bc89;
+}
