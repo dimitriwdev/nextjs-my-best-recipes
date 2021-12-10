@@ -153,13 +153,17 @@ function Recipe({ recipe }) {
 }
 
 export const getServerSideProps = async ({ query }) => {
-  const res = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${query.recipe}`
-  );
-  const result = await res.json();
-  return {
-    props: { recipe: result.meals[0] },
-  };
+  try {
+    const res = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${query.recipe}`
+    );
+    const result = await res.json();
+    return {
+      props: { recipe: result.meals[0] },
+    };
+  } catch (err) {
+    console.log(err.message);
+  }
 };
 
 export default Recipe;

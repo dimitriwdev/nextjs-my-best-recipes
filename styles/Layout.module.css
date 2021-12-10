@@ -21,16 +21,18 @@
 }
 .nav {
   padding: 20px;
+  display: flex;
+  align-tems: center;
 }
 .link {
-  margin: 10px;
+  margin: auto 15px;
   transition: 0.3s ease;
 }
 .link:hover {
   color: #f0bc89;
 }
 .active {
-  margin: 10px;
+  margin: auto 15px;
   color: #f0bc89;
 }
 

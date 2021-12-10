@@ -179,12 +179,16 @@ function RandomRecipe({ randomRecipe }) {
 
 const defaultEndPoint = "https://www.themealdb.com/api/json/v1/1/random.php";
 export const getServerSideProps = async () => {
-  const res = await fetch(defaultEndPoint);
-  const result = await res.json();
+  try {
+    const res = await fetch(defaultEndPoint);
+    const result = await res.json();
 
-  return {
-    props: { randomRecipe: result.meals[0] },
-  };
+    return {
+      props: { randomRecipe: result.meals[0] },
+    };
+  } catch (err) {
+    console.log(err.message);
+  }
 };
 
 export default RandomRecipe;

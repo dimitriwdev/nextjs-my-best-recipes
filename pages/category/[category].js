@@ -49,14 +49,18 @@ function Categories({ category }) {
 }
 
 export const getServerSideProps = async ({ query }) => {
-  const res = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${query.category}`
-  );
-  const results = await res.json();
+  try {
+    const res = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${query.category}`
+    );
+    const results = await res.json();
 
-  return {
-    props: { category: results.meals },
-  };
+    return {
+      props: { category: results.meals },
+    };
+  } catch (err) {
+    console.log(err.message);
+  }
 };
 
 export default Categories;

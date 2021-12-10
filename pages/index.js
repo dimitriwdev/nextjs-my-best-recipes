@@ -105,7 +105,7 @@ const Home = ({ recipes }) => {
               );
             })
           ) : (
-            <h2>Sorry no recipe found</h2>
+            <h2 className={styles.errorMessage}>Sorry no recipe found</h2>
           )}
         </div>
       </div>
@@ -116,14 +116,18 @@ const Home = ({ recipes }) => {
 const defaultEndPoint = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 export async function getServerSideProps() {
-  const res = await fetch(defaultEndPoint);
-  const meals = await res.json();
+  try {
+    const res = await fetch(defaultEndPoint);
+    const meals = await res.json();
 
-  return {
-    props: {
-      recipes: meals,
-    },
-  };
+    return {
+      props: {
+        recipes: meals,
+      },
+    };
+  } catch (err) {
+    console.log(err.message);
+  }
 }
 
 export default Home;
